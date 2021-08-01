@@ -1,0 +1,89 @@
+\documentclass[openany,11pt]{book}
+
+% --- Packages ---
+\usepackage[usenames, dvipsnames]{color} % Cool colors
+\usepackage{enumerate, amsmath, amsthm, amssymb, algorithm, algpseudocode, pifont, subfig, fullpage, dashrule, tikz, bbm, booktabs, bm, verbatim, url, mathtools, wrapfig}
+\usepackage[framemethod=TikZ]{mdframed}
+\usepackage[numbers]{natbib}
+\usepackage{import}
+\usepackage[utf8x]{inputenc}
+\usepackage[russian]{babel}
+\usepackage{csquotes}
+
+\usepackage{tikz}
+\usetikzlibrary{arrows,decorations.pathmorphing,positioning}
+\definecolor{olivegreen}{rgb}{0,0.6,0}
+
+\usepackage{titlesec}
+\usepackage{lipsum}
+  
+\usepackage{titletoc}
+
+\makeatletter
+\def\@endpart{
+    \vfil
+    \textcolor{black}{\hrule height 0.5 pt}
+    \setcounter{tocdepth}{0}
+    
+    \startcontents[parts]
+    \printcontents[parts]{}{0}{}
+    
+    \textcolor{black}{\hrule height 0.5 pt}
+    \par\bigskip
+    \vfil\newpage
+}
+\makeatother
+
+\titleformat{\chapter}[hang]{\normalfont\bfseries}{}{0pt}{\huge}
+
+\usepackage[default,scale=1.0]{opensans}
+\renewcommand\seriesdefault{l}
+\renewcommand\mddefault{m}
+\renewcommand\bfdefault{m}
+
+% --- Misc. ---
+\hbadness=10000 % No "underfull hbox" messages.
+\setlength{\parindent}{0pt} % Removes all indentation.
+
+% --- Commands ---
+\input{commands}
+
+% Nice coloring of references.
+\usepackage{hyperref}
+\hypersetup{               
+    colorlinks=true,              
+    breaklinks=true,               
+    urlcolor=dblue,
+    linkcolor=dgreen,
+    linkbordercolor=dgreen,
+    citecolor=dblue,
+    citebordercolor=dblue
+}
+
+% --- For bibliography ---
+\usepackage{bibunits}
+
+% --- Meta Info ---
+\title{KDD 2021 Notes}
+\author{Ilnur Shugaepov}
+\date{August 2021}
+
+% \doparttoc
+% --- Begin Document ---
+\begin{document}
+\maketitle
+\setcounter{tocdepth}{0}
+\small{\tableofcontents}
+\newpage
+
+\subimport{parts/}{highlights.tex}
+
+% ---------------------------
+% -- Information Retrieval --
+% ---------------------------
+\newpage
+\part{Information Retrieval}
+\subimport{parts/ir/}{ir.tex}
+
+
+\end{document}
