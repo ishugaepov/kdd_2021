@@ -6,9 +6,6 @@
 \usepackage[framemethod=TikZ]{mdframed}
 \usepackage[numbers]{natbib}
 \usepackage{import}
-\usepackage[utf8x]{inputenc}
-\usepackage[russian]{babel}
-\usepackage{csquotes}
 
 \usepackage{tikz}
 \usetikzlibrary{arrows,decorations.pathmorphing,positioning}
@@ -36,10 +33,26 @@
 
 \titleformat{\chapter}[hang]{\normalfont\bfseries}{}{0pt}{\huge}
 
+% --------------- Regular Fonts ---------------
+% Switch to pdfLaTeX compiler
+\usepackage[utf8x]{inputenc}
+\usepackage[russian]{babel}
+\usepackage{csquotes}
 \usepackage[default,scale=1.0]{opensans}
 \renewcommand\seriesdefault{l}
 \renewcommand\mddefault{m}
 \renewcommand\bfdefault{m}
+% ------------------ VK Fonts ------------------
+% Switch to XeLaTeX compiler
+% \usepackage{anyfontsize}
+% \usepackage{fontspec}
+% \setmainfont[Path=,BoldFont=bold.otf,ItalicFont=italic.ttf]{regular.otf}
+% \usepackage{dsfont}
+% \usepackage{xunicode}
+% \usepackage{xltxtra}
+% \usepackage{xecyr}
+% ------------------ VK Fonts ------------------
+
 
 % --- Misc. ---
 \hbadness=10000 % No "underfull hbox" messages.
@@ -85,5 +98,11 @@
 \part{Information Retrieval}
 \subimport{parts/ir/}{ir.tex}
 
+% -----------
+% -- Other --
+% -----------
+\newpage
+\part{Other}
+\subimport{parts/other/}{other.tex}
 
 \end{document}
